@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "data-tree": "^1.2.4",
+    "graph-data-structure": "^1.8.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.22.2",
+    "nodemon": "^1.18.7",
+    "tree-model": "^1.0.7"
+  }
+}
