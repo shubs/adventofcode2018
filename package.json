@@ -1,6 +1,8 @@
 {
   "dependencies": {
     "data-tree": "^1.2.4",
+    "dbly-linked-list": "^0.2.0",
+    "doubly-linked-list-js": "^0.1.8",
     "graph-data-structure": "^1.8.0",
     "lodash": "^4.17.11",
     "moment": "^2.22.2",
