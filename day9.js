@@ -43,21 +43,20 @@ function playGame(gameInitData){
         }
         players.push(p)
     }
-    var marbels = _.range(1, gameInitData. lastMarbelPoint);
 
     var currentMarbel = null
     
     var circle = new DLL.DoublyLinkedList();
     currentMarbel = circle.append(0)
     var currentPlayer = players[players.length - 1]
-    
+    var marbels = 0
 
     // turns
     do {
         currentPlayer = getNextPlayer(players, currentPlayer, gameInitData.nbPlayers)
         
-        // action
-        var playedMarbel = marbels.shift()
+        marbels++
+        playedMarbel = marbels
 
         //check
         if (playedMarbel % 23 == 0){
@@ -79,11 +78,6 @@ function playGame(gameInitData){
             
             removedMarbel.remove()
             currentPlayer.score += removedMarbel.data
-
-            //assignation
-            //celui qui etait a coté de celui remové devient le current
-            //currentMarbel = removedMarbel
-            //_.findIndex - 7
         }
         else{
             var nextOne = null
@@ -96,12 +90,10 @@ function playGame(gameInitData){
             
             currentMarbel = nextOne.append(playedMarbel)
 
-            // assignation
         }
         
         // end action
-
-    } while (marbels.length != 0)
+    } while (marbels != gameInitData.lastMarbelPoint)
     
     printWinner(players)
 }
@@ -110,7 +102,6 @@ function playGame(gameInitData){
 function getNextPlayer (players, currentPlayer, nblayers){
     if (currentPlayer.id != nblayers)
         return players[currentPlayer.id]
-    
     return players[0]
 }
 
